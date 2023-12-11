@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "zephyr/subsys/shell/modules",
+		"source" : "/home/mike/zephyr/zephyr/subsys/shell/modules"
+	}
+}

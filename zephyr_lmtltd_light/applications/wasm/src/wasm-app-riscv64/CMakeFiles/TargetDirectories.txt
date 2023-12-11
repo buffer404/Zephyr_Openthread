@@ -1,0 +1,3 @@
+/home/mkolchurin/projects/zephyr-workspace/zephyr_lmtltd/applications/wasm/src/wasm-app-riscv64/CMakeFiles/binarydump.dir
+/home/mkolchurin/projects/zephyr-workspace/zephyr_lmtltd/applications/wasm/src/wasm-app-riscv64/CMakeFiles/edit_cache.dir
+/home/mkolchurin/projects/zephyr-workspace/zephyr_lmtltd/applications/wasm/src/wasm-app-riscv64/CMakeFiles/rebuild_cache.dir

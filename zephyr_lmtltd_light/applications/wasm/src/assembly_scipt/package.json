@@ -1,0 +1,15 @@
+{
+  "name": "assembly_script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:main": "asc main.ts -b build/main.wasm -t build/main.wat --maximumMemory 16 --runtime incremental --converge --sourceMap --optimize --exportRuntime --use abort="
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "assemblyscript": "^0.18.15"
+  }
+}

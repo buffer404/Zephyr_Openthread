@@ -1,0 +1,10 @@
+description: basic radio device like ptBLABLA
+
+include: base.yaml
+
+compatible: "basic-radio-device"
+
+properties:
+    label:
+      type: string
+      required: true

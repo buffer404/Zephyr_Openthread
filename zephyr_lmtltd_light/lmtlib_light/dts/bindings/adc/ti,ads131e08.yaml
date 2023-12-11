@@ -1,0 +1,24 @@
+description: Texas Instruments ADS131E08 Analog to digital converter
+
+include: [adc-controller.yaml, spi-device.yaml]
+compatible: "ti,ads131e08-adc"
+
+
+properties:
+    timer:
+      type: phandle
+      required: false
+    drdy-gpios:
+      type: phandle-array
+      description: Data Ready pin
+    nrst-gpios:
+      type: phandle-array
+      description: nRESET pin
+      required: true
+    start-gpios:
+      type: phandle-array
+      description: start pin
+
+io-channel-cells:
+  - positive
+  - negative

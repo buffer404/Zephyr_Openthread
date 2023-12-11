@@ -1,0 +1,26 @@
+description: STM32 radio io
+
+compatible: "st,radio-io"
+
+# include: [pwm-controller.yaml, base.yaml, pinctrl-device.yaml]
+
+include: [base.yaml, pinctrl-device.yaml]
+# status = "okay";
+# timer = &timers2;
+# rx_pin = <gpioa 15 0>;
+# tx_pin = <gpioa 15 0>;
+
+properties:
+    timer:
+      type: phandle
+      required: true
+    pinctrl-0:
+      required: true
+    pinctrl-names:
+      required: true
+    tim-direct-channel:
+      type: int
+      required: true
+    tim32bit-res:
+      type: boolean
+      required: false

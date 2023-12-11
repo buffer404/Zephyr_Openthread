@@ -1,0 +1,10 @@
+description: Texas Instruments ADS8698 Analog to digital converter
+
+include: [adc-controller.yaml, spi-device.yaml]
+compatible: "ti,ads8698-adc"
+
+
+properties:
+    timer:
+      type: phandle
+      required: true

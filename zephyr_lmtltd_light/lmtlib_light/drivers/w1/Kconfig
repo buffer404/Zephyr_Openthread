@@ -1,0 +1,6 @@
+if W1
+
+rsource "Kconfig.zephyr_gpio"
+rsource "Kconfig.zephyr_stm32_tim"
+
+endif # W1

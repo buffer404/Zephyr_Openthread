@@ -1,0 +1,10 @@
+description: Modbus over serial line device
+
+compatible: "lmt,hdlc-serial"
+
+include: uart-device.yaml
+
+properties:
+  de-gpios:
+    type: phandle-array
+    description: Driver enable pin.

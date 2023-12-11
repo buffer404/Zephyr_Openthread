@@ -1,0 +1,1 @@
+add_subdirectory_ifdef(CONFIG_ADG708 adg708)

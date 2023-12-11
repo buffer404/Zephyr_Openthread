@@ -1,0 +1,18 @@
+description: W1 over gpio
+
+compatible: "zephyr,w1-stm32-tim"
+
+include: [base.yaml, w1-master.yaml]
+
+
+properties:
+    ctrl-gpios:
+      type: phandle-array
+      required: true
+    timer:
+      type: phandle
+      required: true
+    tim-channel:
+      type: int
+      required: false
+      default: 1

@@ -1,0 +1,151 @@
+/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/250/bin/ninja/linux/x64/ninja -DCMAKE_C_COMPILER=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -G Ninja -S /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal -B /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal
+-- CMake version: 3.27.7
+-- Cache files will be written to: /home/mike/.cache/zephyr
+-- Zephyr version: 3.5.0-rc2 (/home/mike/zephyr/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: SOVA427VI, Revision: 1.1.0
+-- Found host-tools: zephyr 0.16.3 (/home/mike/download/zephyr-sdk-0.16.3)
+-- Found toolchain: zephyr 0.16.3 (/home/mike/download/zephyr-sdk-0.16.3)
+-- Found BOARD.dts: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/lmtlib_light/boards/arm/SOVA/SOVA427VI.dts
+-- Found devicetree overlay: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/app.overlay
+-- Generated zephyr.dts: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug/zephyr/include/generated/devicetree_generated.h
+-- Including generated dts.cmake file: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug/zephyr/dts.cmake
+
+warning: STACK_SENTINEL (defined at subsys/debug/Kconfig:177) was assigned the value 'y' but got the
+value 'n'. Check these unsatisfied dependencies: (!MPU_STACK_GUARD) (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_STACK_SENTINEL and/or look up
+STACK_SENTINEL in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+
+warning: NET_L2_IEEE802154_SHELL (defined at subsys/net/l2/ieee802154/Kconfig:74) was assigned the
+value 'y' but got the value 'n'. Check these unsatisfied dependencies: NET_L2_IEEE802154_RFD (=n),
+NET_L2_IEEE802154 (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_NET_L2_IEEE802154_SHELL and/or look up
+NET_L2_IEEE802154_SHELL in the menuconfig/guiconfig interface. The Application Development Primer,
+Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
+helpful too.
+
+Parsing /home/mike/zephyr/zephyr/Kconfig
+Loaded configuration '/home/mike/zephyr/zephyr/zephyr_lmtltd_light/lmtlib_light/boards/arm/SOVA/SOVA427VI_defconfig'
+Merged configuration '/home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/prj.conf'
+No change to configuration in '/home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug/zephyr/.config'
+No change to Kconfig header in '/home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug/zephyr/include/generated/autoconf.h'
+-- OpenThread Source Directory: /home/mike/zephyr/modules/lib/openthread
+-- OT_APP_CLI=ON
+-- OT_APP_NCP=ON
+-- OT_APP_RCP=ON
+-- OT_FTD=OFF
+-- OT_MTD=ON
+-- OT_RCP=ON
+-- - - - - - - - - - - - - - - - - 
+-- OpenThread ON/OFF/Unspecified Configs
+-- OT_15_4=ON --> OPENTHREAD_CONFIG_RADIO_LINK_IEEE_802_15_4_ENABLE=1
+-- OT_ANDROID_NDK=""
+-- OT_ANYCAST_LOCATOR=OFF --> OPENTHREAD_CONFIG_TMF_ANYCAST_LOCATOR_ENABLE=0
+-- OT_ASSERT=ON --> OPENTHREAD_CONFIG_ASSERT_ENABLE=1
+-- OT_BACKBONE_ROUTER=OFF --> OPENTHREAD_CONFIG_BACKBONE_ROUTER_ENABLE=0
+-- OT_BACKBONE_ROUTER_DUA_NDPROXYING=OFF --> OPENTHREAD_CONFIG_BACKBONE_ROUTER_DUA_NDPROXYING_ENABLE=0
+-- OT_BACKBONE_ROUTER_MULTICAST_ROUTING=OFF --> OPENTHREAD_CONFIG_BACKBONE_ROUTER_MULTICAST_ROUTING_ENABLE=0
+-- OT_BORDER_AGENT=OFF --> OPENTHREAD_CONFIG_BORDER_AGENT_ENABLE=0
+-- OT_BORDER_AGENT_ID=""
+-- OT_BORDER_ROUTER=OFF --> OPENTHREAD_CONFIG_BORDER_ROUTER_ENABLE=0
+-- OT_BORDER_ROUTING=OFF --> OPENTHREAD_CONFIG_BORDER_ROUTING_ENABLE=0
+-- OT_BORDER_ROUTING_DHCP6_PD=OFF --> OPENTHREAD_CONFIG_BORDER_ROUTING_DHCP6_PD_ENABLE=0
+-- OT_BORDER_ROUTING_COUNTERS=OFF --> OPENTHREAD_CONFIG_IP6_BR_COUNTERS_ENABLE=0
+-- OT_CHANNEL_MANAGER=OFF --> OPENTHREAD_CONFIG_CHANNEL_MANAGER_ENABLE=0
+-- OT_CHANNEL_MONITOR=OFF --> OPENTHREAD_CONFIG_CHANNEL_MONITOR_ENABLE=0
+-- OT_COAP=OFF --> OPENTHREAD_CONFIG_COAP_API_ENABLE=0
+-- OT_COAP_BLOCK=OFF --> OPENTHREAD_CONFIG_COAP_BLOCKWISE_TRANSFER_ENABLE=0
+-- OT_COAP_OBSERVE=OFF --> OPENTHREAD_CONFIG_COAP_OBSERVE_API_ENABLE=0
+-- OT_COAPS=OFF --> OPENTHREAD_CONFIG_COAP_SECURE_API_ENABLE=0
+-- OT_COMMISSIONER=OFF --> OPENTHREAD_CONFIG_COMMISSIONER_ENABLE=0
+-- OT_CSL_AUTO_SYNC=OFF --> OPENTHREAD_CONFIG_MAC_CSL_AUTO_SYNC_ENABLE=0
+-- OT_CSL_DEBUG=OFF --> OPENTHREAD_CONFIG_MAC_CSL_DEBUG_ENABLE=0
+-- OT_CSL_RECEIVER=OFF --> OPENTHREAD_CONFIG_MAC_CSL_RECEIVER_ENABLE=0
+-- OT_DATASET_UPDATER=OFF --> OPENTHREAD_CONFIG_DATASET_UPDATER_ENABLE=0
+-- OT_DEVICE_PROP_LEADER_WEIGHT=OFF --> OPENTHREAD_CONFIG_MLE_DEVICE_PROPERTY_LEADER_WEIGHT_ENABLE=0
+-- OT_DHCP6_CLIENT=OFF --> OPENTHREAD_CONFIG_DHCP6_CLIENT_ENABLE=0
+-- OT_DHCP6_SERVER=OFF --> OPENTHREAD_CONFIG_DHCP6_SERVER_ENABLE=0
+-- OT_DIAGNOSTIC=OFF --> OPENTHREAD_CONFIG_DIAG_ENABLE=0
+-- OT_DNS_CLIENT=OFF --> OPENTHREAD_CONFIG_DNS_CLIENT_ENABLE=0
+-- OT_DNS_CLIENT_OVER_TCP=OFF --> OPENTHREAD_CONFIG_DNS_CLIENT_OVER_TCP_ENABLE=0
+-- OT_DNS_DSO=OFF --> OPENTHREAD_CONFIG_DNS_DSO_ENABLE=0
+-- OT_DNS_UPSTREAM_QUERY=OFF --> OPENTHREAD_CONFIG_DNS_UPSTREAM_QUERY_ENABLE=0
+-- OT_DNSSD_SERVER=OFF --> OPENTHREAD_CONFIG_DNSSD_SERVER_ENABLE=0
+-- OT_DUA=OFF --> OPENTHREAD_CONFIG_DUA_ENABLE=0
+-- OT_ECDSA=OFF --> OPENTHREAD_CONFIG_ECDSA_ENABLE=0
+-- OT_EXTERNAL_HEAP=OFF --> OPENTHREAD_CONFIG_HEAP_EXTERNAL_ENABLE=0
+-- OT_FIREWALL=OFF --> OPENTHREAD_POSIX_CONFIG_FIREWALL_ENABLE=0
+-- OT_HISTORY_TRACKER=OFF --> OPENTHREAD_CONFIG_HISTORY_TRACKER_ENABLE=0
+-- OT_IP6_FRAGM=OFF --> OPENTHREAD_CONFIG_IP6_FRAGMENTATION_ENABLE=0
+-- OT_JAM_DETECTION=OFF --> OPENTHREAD_CONFIG_JAM_DETECTION_ENABLE=0
+-- OT_JOINER=ON --> OPENTHREAD_CONFIG_JOINER_ENABLE=1
+-- OT_LINK_METRICS_INITIATOR=OFF --> OPENTHREAD_CONFIG_MLE_LINK_METRICS_INITIATOR_ENABLE=0
+-- OT_LINK_METRICS_MANAGER=OFF --> OPENTHREAD_CONFIG_LINK_METRICS_MANAGER_ENABLE=0
+-- OT_LINK_METRICS_SUBJECT=OFF --> OPENTHREAD_CONFIG_MLE_LINK_METRICS_SUBJECT_ENABLE=0
+-- OT_LINK_RAW=OFF --> OPENTHREAD_CONFIG_LINK_RAW_ENABLE=0
+-- OT_LOG_LEVEL_DYNAMIC=OFF --> OPENTHREAD_CONFIG_LOG_LEVEL_DYNAMIC_ENABLE=0
+-- OT_MAC_FILTER=OFF --> OPENTHREAD_CONFIG_MAC_FILTER_ENABLE=0
+-- OT_MESH_DIAG=OFF --> OPENTHREAD_CONFIG_MESH_DIAG_ENABLE=0
+-- OT_MESSAGE_USE_HEAP=OFF --> OPENTHREAD_CONFIG_MESSAGE_USE_HEAP_ENABLE=0
+-- OT_MLE_LONG_ROUTES=OFF --> OPENTHREAD_CONFIG_MLE_LONG_ROUTES_ENABLE=0
+-- OT_MLR=OFF --> OPENTHREAD_CONFIG_MLR_ENABLE=0
+-- OT_MULTIPLE_INSTANCE=OFF --> OPENTHREAD_CONFIG_MULTIPLE_INSTANCE_ENABLE=0
+-- OT_NAT64_BORDER_ROUTING=OFF --> OPENTHREAD_CONFIG_NAT64_BORDER_ROUTING_ENABLE=0
+-- OT_NAT64_TRANSLATOR=OFF --> OPENTHREAD_CONFIG_NAT64_TRANSLATOR_ENABLE=0
+-- OT_NEIGHBOR_DISCOVERY_AGENT=OFF --> OPENTHREAD_CONFIG_NEIGHBOR_DISCOVERY_AGENT_ENABLE=0
+-- OT_NETDATA_PUBLISHER=OFF --> OPENTHREAD_CONFIG_NETDATA_PUBLISHER_ENABLE=0
+-- OT_NETDIAG_CLIENT=OFF --> OPENTHREAD_CONFIG_TMF_NETDIAG_CLIENT_ENABLE=0
+-- OT_OPERATIONAL_DATASET_AUTO_INIT=ON --> OPENTHREAD_CONFIG_OPERATIONAL_DATASET_AUTO_INIT=1
+-- OT_OTNS=OFF --> OPENTHREAD_CONFIG_OTNS_ENABLE=0
+-- OT_PING_SENDER=OFF --> OPENTHREAD_CONFIG_PING_SENDER_ENABLE=0
+-- OT_PLATFORM_NETIF=OFF --> OPENTHREAD_CONFIG_PLATFORM_NETIF_ENABLE=0
+-- OT_PLATFORM_UDP=OFF --> OPENTHREAD_CONFIG_PLATFORM_UDP_ENABLE=0
+-- OT_REFERENCE_DEVICE=OFF --> OPENTHREAD_CONFIG_REFERENCE_DEVICE_ENABLE=0
+-- OT_SERVICE=OFF --> OPENTHREAD_CONFIG_TMF_NETDATA_SERVICE_ENABLE=0
+-- OT_SETTINGS_RAM=OFF --> OPENTHREAD_SETTINGS_RAM=0
+-- OT_SLAAC=OFF --> OPENTHREAD_CONFIG_IP6_SLAAC_ENABLE=0
+-- OT_SNTP_CLIENT=OFF --> OPENTHREAD_CONFIG_SNTP_CLIENT_ENABLE=0
+-- OT_SRP_CLIENT=OFF --> OPENTHREAD_CONFIG_SRP_CLIENT_ENABLE=0
+-- OT_SRP_SERVER=OFF --> OPENTHREAD_CONFIG_SRP_SERVER_ENABLE=0
+-- OT_TCP=OFF --> OPENTHREAD_CONFIG_TCP_ENABLE=0
+-- OT_TIME_SYNC=OFF --> OPENTHREAD_CONFIG_TIME_SYNC_ENABLE=0
+-- OT_TREL=OFF --> OPENTHREAD_CONFIG_RADIO_LINK_TREL_ENABLE=0
+-- OT_TX_BEACON_PAYLOAD=OFF --> OPENTHREAD_CONFIG_MAC_OUTGOING_BEACON_PAYLOAD_ENABLE=0
+-- OT_TX_QUEUE_STATS=OFF --> OPENTHREAD_CONFIG_TX_QUEUE_STATISTICS_ENABLE=0
+-- OT_UDP_FORWARD=OFF --> OPENTHREAD_CONFIG_UDP_FORWARD_ENABLE=0
+-- OT_UPTIME=OFF --> OPENTHREAD_CONFIG_UPTIME_ENABLE=0
+-- - - - - - - - - - - - - - - - - 
+-- OT_PLATFORM="zephyr"
+-- OT_THREAD_VERSION="1.3" -> OPENTHREAD_CONFIG_THREAD_VERSION=OT_THREAD_VERSION_1_3
+-- OT_LOG_LEVEL=""
+-- OT_LOG_OUTPUT=""
+-- OT_VENDOR_NAME=""
+-- OT_VENDOR_MODEL=""
+-- OT_VENDOR_SW_VERSION=""
+-- OT_POWER_SUPPLY="EXTERNAL" --> OPENTHREAD_CONFIG_DEVICE_POWER_SUPPLY=OT_POWER_SUPPLY_EXTERNAL
+-- OT_MLE_MAX_CHILDREN=""
+-- OT_RCP_RESTORATION_MAX_COUNT=""
+-- OpenThread CMake build type: Debug
+-- Package Name: OPENTHREAD
+-- Setting default package version: d62167ee3
+-- Package Version: d62167ee3
+CMake Warning at /home/mike/zephyr/zephyr/CMakeLists.txt:1962 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+CMake Warning at /home/mike/zephyr/zephyr/CMakeLists.txt:1993 (message):
+  
+
+        The CMake build type was set to 'Debug', but the optimization flag was set to '-Og'.
+        This may be intentional and the warning can be turned off by setting the CMake variable 'NO_BUILD_TYPE_WARNING'
+
+
+-- Configuring done (10.0s)
+-- Generating done (0.5s)
+-- Build files have been written to: /home/mike/zephyr/zephyr/zephyr_lmtltd_light/applications/cc-app-minimal/cmake-build-debug

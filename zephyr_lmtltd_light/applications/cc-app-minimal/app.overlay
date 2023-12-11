@@ -1,0 +1,28 @@
+
+
+
+/ {
+	
+	aliases {
+		ti-cc1200 = &spi_cc1200;
+	};
+	chosen {
+		zephyr,ieee802154 = &spi_cc1200;
+	};
+};
+
+&spi3 {
+	cs-gpios = <&gpiod 11 GPIO_ACTIVE_LOW>;
+	status = "okay";
+
+	spi_cc1200: cc1200@0 {
+		compatible = "ti,cc1200";
+		cca-gpios = <&gpiod 11 GPIO_ACTIVE_LOW>;
+		reg = <0>;
+		spi-max-frequency = <2000000>;
+		int-gpios = <&gpiob 5 GPIO_ACTIVE_HIGH>;
+		status= "okay";
+	};
+
+};
+

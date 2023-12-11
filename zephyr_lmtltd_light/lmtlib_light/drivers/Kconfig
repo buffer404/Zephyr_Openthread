@@ -1,0 +1,5 @@
+menu "Device Drivers"
+
+rsource "misc/Kconfig"
+rsource "w1/Kconfig"
+endmenu

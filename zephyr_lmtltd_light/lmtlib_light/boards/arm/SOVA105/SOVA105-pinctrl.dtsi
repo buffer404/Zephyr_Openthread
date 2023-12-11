@@ -1,0 +1,12 @@
+#include <zephyr/dt-bindings/pinctrl/stm32f1-pinctrl.h>
+
+/ {
+	soc {
+		pinctrl: pin-controller@40010800 {
+
+			spi2_sck_master_pb10: spi2_sck_master_pb10 {
+				pinmux = <STM32F1_PINMUX('B', 10, ALTERNATE, NO_REMAP)>;
+			};
+		};
+	};
+};

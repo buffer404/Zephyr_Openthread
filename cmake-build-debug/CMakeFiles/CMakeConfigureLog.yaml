@@ -1,0 +1,384 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt"
+    message: |
+      The system is: Linux - 5.15.0-52-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-c++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ZBp2u0"
+      binary: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ZBp2u0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ZBp2u0
+        
+        Run Build Command(s):/snap/clion/250/bin/ninja/linux/x64/ninja -v cmTC_94457 && [1/2] /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o -c /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+        Target: arm-zephyr-eabi
+        Configured with: /__w/_temp/workspace/build/.build/arm-zephyr-eabi/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=arm-zephyr-eabi --prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --exec_prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --with-local-prefix=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi --with-headers=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='Zephyr SDK 0.16.3' --with-bugurl=https://github.com/zephyrproject-rtos/sdk-ng/issues --enable-__cxa_atexit --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-libstdcxx-verbose --with-gmp=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpfr=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpc=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-isl=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --enable-lto --enable-target-optspace --disable-nls --enable-multiarch --with-multilib-list=rmprofile --enable-languages=c,c++ --with-gnu-ld --with-gnu-as --enable-initfini-array
+        Thread model: single
+        Supported LTO compression algorithms: zlib
+        gcc version 12.2.0 (Zephyr SDK 0.16.3) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_94457.dir/'
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/arm-zephyr-eabi/12.2.0/cc1 -quiet -v -iprefix /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/ -D__USES_INITFINI__ /snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_94457.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o /tmp/ccXF545g.s
+        GNU C17 (Zephyr SDK 0.16.3) version 12.2.0 (arm-zephyr-eabi)
+        	compiled by GNU C version 7.5.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/include"
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed"
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/sys-include"
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/sys-include
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/include
+        End of search list.
+        GNU C17 (Zephyr SDK 0.16.3) version 12.2.0 (arm-zephyr-eabi)
+        	compiled by GNU C version 7.5.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: a2290b8ff592a28352a23b850182115f
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_94457.dir/'
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o /tmp/ccXF545g.s
+        GNU assembler version 2.38 (arm-zephyr-eabi) using BFD version (Zephyr SDK 0.16.3) 2.38
+        COMPILER_PATH=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/arm-zephyr-eabi/12.2.0/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/
+        LIBRARY_PATH=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -v  -rdynamic CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o -o cmTC_94457   && :
+        FAILED: cmTC_94457 
+        : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -v  -rdynamic CMakeFiles/cmTC_94457.dir/CMakeCCompilerABI.c.o -o cmTC_94457   && :
+        Using built-in specs.
+        COLLECT_GCC=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+        COLLECT_LTO_WRAPPER=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/arm-zephyr-eabi/12.2.0/lto-wrapper
+        arm-zephyr-eabi-gcc: error: unrecognized command-line option '-rdynamic'
+        Target: arm-zephyr-eabi
+        Configured with: /__w/_temp/workspace/build/.build/arm-zephyr-eabi/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=arm-zephyr-eabi --prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --exec_prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --with-local-prefix=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi --with-headers=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='Zephyr SDK 0.16.3' --with-bugurl=https://github.com/zephyrproject-rtos/sdk-ng/issues --enable-__cxa_atexit --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-libstdcxx-verbose --with-gmp=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpfr=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpc=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-isl=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --enable-lto --enable-target-optspace --disable-nls --enable-multiarch --with-multilib-list=rmprofile --enable-languages=c,c++ --with-gnu-ld --with-gnu-as --enable-initfini-array
+        Thread model: single
+        Supported LTO compression algorithms: zlib
+        gcc version 12.2.0 (Zephyr SDK 0.16.3) 
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/snap/clion/250/bin/cmake/linux/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt"
+    checks:
+      - "Check for working C compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc"
+    directories:
+      source: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AAnlX1"
+      binary: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AAnlX1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AAnlX1
+        
+        Run Build Command(s):/snap/clion/250/bin/ninja/linux/x64/ninja -v cmTC_d258f && [1/2] /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc   -fdiagnostics-color=always -o CMakeFiles/cmTC_d258f.dir/testCCompiler.c.o -c /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-AAnlX1/testCCompiler.c
+        [2/2] : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -rdynamic CMakeFiles/cmTC_d258f.dir/testCCompiler.c.o -o cmTC_d258f   && :
+        FAILED: cmTC_d258f 
+        : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -rdynamic CMakeFiles/cmTC_d258f.dir/testCCompiler.c.o -o cmTC_d258f   && :
+        arm-zephyr-eabi-gcc: error: unrecognized command-line option '-rdynamic'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt"
+    message: |
+      The system is: Linux - 5.15.0-52-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/3.27.7/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/ld: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/libc.a(lib_a-exit.o): in function `exit':
+      exit.c:(.text.exit+0x34): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-c++ 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/3.27.7/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-H32zF3"
+      binary: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-H32zF3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-H32zF3'
+        
+        Run Build Command(s): /snap/clion/250/bin/ninja/linux/x64/ninja -v cmTC_5c1a1
+        [1/2] /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+        Target: arm-zephyr-eabi
+        Configured with: /__w/_temp/workspace/build/.build/arm-zephyr-eabi/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=arm-zephyr-eabi --prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --exec_prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --with-local-prefix=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi --with-headers=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='Zephyr SDK 0.16.3' --with-bugurl=https://github.com/zephyrproject-rtos/sdk-ng/issues --enable-__cxa_atexit --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-libstdcxx-verbose --with-gmp=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpfr=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpc=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-isl=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --enable-lto --enable-target-optspace --disable-nls --enable-multiarch --with-multilib-list=rmprofile --enable-languages=c,c++ --with-gnu-ld --with-gnu-as --enable-initfini-array
+        Thread model: single
+        Supported LTO compression algorithms: zlib
+        gcc version 12.2.0 (Zephyr SDK 0.16.3) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5c1a1.dir/'
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/arm-zephyr-eabi/12.2.0/cc1 -quiet -v -iprefix /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/ -D__USES_INITFINI__ /usr/share/cmake-3.27/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5c1a1.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mcpu=arm7tdmi -mfloat-abi=soft -marm -mlibarch=armv4t -march=armv4t -version -fdiagnostics-color=always -o /tmp/ccZEQSlk.s
+        GNU C17 (Zephyr SDK 0.16.3) version 12.2.0 (arm-zephyr-eabi)
+        	compiled by GNU C version 7.5.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/include"
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed"
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/sys-include"
+        ignoring duplicate directory "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/../../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/include-fixed
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/sys-include
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/include
+        End of search list.
+        GNU C17 (Zephyr SDK 0.16.3) version 12.2.0 (arm-zephyr-eabi)
+        	compiled by GNU C version 7.5.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: a2290b8ff592a28352a23b850182115f
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5c1a1.dir/'
+         /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/as -v -march=armv4t -mfloat-abi=soft -meabi=5 -o CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o /tmp/ccZEQSlk.s
+        GNU assembler version 2.38 (arm-zephyr-eabi) using BFD version (Zephyr SDK 0.16.3) 2.38
+        COMPILER_PATH=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/arm-zephyr-eabi/12.2.0/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/bin/
+        LIBRARY_PATH=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/:/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/12.2.0/../../../../arm-zephyr-eabi/lib/
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=arm7tdmi' '-mfloat-abi=soft' '-marm' '-mlibarch=armv4t' '-march=armv4t' '-dumpdir' 'CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -v  -rdynamic CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o -o cmTC_5c1a1   && :
+        FAILED: cmTC_5c1a1 
+        : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -v  -rdynamic CMakeFiles/cmTC_5c1a1.dir/CMakeCCompilerABI.c.o -o cmTC_5c1a1   && :
+        Using built-in specs.
+        COLLECT_GCC=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+        COLLECT_LTO_WRAPPER=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/../libexec/gcc/arm-zephyr-eabi/12.2.0/lto-wrapper
+        arm-zephyr-eabi-gcc: error: unrecognized command-line option '-rdynamic'
+        Target: arm-zephyr-eabi
+        Configured with: /__w/_temp/workspace/build/.build/arm-zephyr-eabi/src/gcc/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=arm-zephyr-eabi --prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --exec_prefix=/__w/_temp/workspace/output/arm-zephyr-eabi --with-local-prefix=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi --with-headers=/__w/_temp/workspace/output/arm-zephyr-eabi/arm-zephyr-eabi/include --with-newlib --enable-threads=no --disable-shared --with-pkgversion='Zephyr SDK 0.16.3' --with-bugurl=https://github.com/zephyrproject-rtos/sdk-ng/issues --enable-__cxa_atexit --disable-libgomp --disable-libmudflap --disable-libmpx --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-libstdcxx-verbose --with-gmp=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpfr=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-mpc=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --with-isl=/__w/_temp/workspace/build/.build/arm-zephyr-eabi/buildtools --enable-lto --enable-target-optspace --disable-nls --enable-multiarch --with-multilib-list=rmprofile --enable-languages=c,c++ --with-gnu-ld --with-gnu-as --enable-initfini-array
+        Thread model: single
+        Supported LTO compression algorithms: zlib
+        gcc version 12.2.0 (Zephyr SDK 0.16.3) 
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt"
+    checks:
+      - "Check for working C compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc"
+    directories:
+      source: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-71Y863"
+      binary: "/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-71Y863"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-71Y863'
+        
+        Run Build Command(s): /snap/clion/250/bin/ninja/linux/x64/ninja -v cmTC_11b21
+        [1/2] /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc   -fdiagnostics-color=always -o CMakeFiles/cmTC_11b21.dir/testCCompiler.c.o -c /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-71Y863/testCCompiler.c
+        [2/2] : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -rdynamic CMakeFiles/cmTC_11b21.dir/testCCompiler.c.o -o cmTC_11b21   && :
+        FAILED: cmTC_11b21 
+        : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -rdynamic CMakeFiles/cmTC_11b21.dir/testCCompiler.c.o -o cmTC_11b21   && :
+        arm-zephyr-eabi-gcc: error: unrecognized command-line option '-rdynamic'
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...

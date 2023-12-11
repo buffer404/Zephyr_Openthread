@@ -1,0 +1,127 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "modules/openthread/build/examples/platforms/utils/libopenthread-platform-utils-static.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_definitions"
+		],
+		"files" : 
+		[
+			"/home/mike/zephyr/modules/lib/openthread/examples/platforms/utils/CMakeLists.txt",
+			"/home/mike/zephyr/zephyr/modules/openthread/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 506,
+				"parent" : 2
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "openthread-platform-utils::@6b4a3d0c043f4f209ead"
+		}
+	],
+	"id" : "openthread-platform-utils-static::@6b4a3d0c043f4f209ead",
+	"name" : "openthread-platform-utils-static",
+	"nameOnDisk" : "libopenthread-platform-utils-static.a",
+	"paths" : 
+	{
+		"build" : "modules/openthread/build/examples/platforms/utils",
+		"source" : "/home/mike/zephyr/modules/lib/openthread/examples/platforms/utils"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Object Libraries",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/debug_uart.c.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/link_metrics.cpp.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/logging_rtt.c.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/mac_frame.cpp.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/otns_utils.cpp.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/settings_ram.c.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/soft_source_match_table.c.obj",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/modules/openthread/build/examples/platforms/utils/CMakeFiles/openthread-platform-utils.dir/uart_rtt.c.obj",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

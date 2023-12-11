@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "modules/openthread/build/tests",
+		"source" : "/home/mike/zephyr/modules/lib/openthread/tests"
+	}
+}

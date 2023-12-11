@@ -1,0 +1,8 @@
+
+menu "LMT ltd"
+
+rsource "subsys/Kconfig"
+rsource "drivers/Kconfig"
+rsource "tests/Kconfig"
+
+endmenu

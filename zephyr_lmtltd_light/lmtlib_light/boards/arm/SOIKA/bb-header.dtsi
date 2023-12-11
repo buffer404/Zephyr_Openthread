@@ -1,0 +1,42 @@
+
+/ {
+
+	bb_header: connector {
+		compatible = "lmt,bb-header";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map = 
+			  /*<1> +5V		   									,<2> GND
+			  	<3> VDDIO       								,<4> GND */
+				<5 0 &gpiob 8 0>	/*i2c_SCL */				,<6 0 &gpiob 9 0> 	/*i2c_SDA */,
+				<7 0 &gpioa 1 0>	/*i2c_SMBA */  				,<8 0 &gpioa 0 0> 	/*i2c_nRST */,
+				<9 0 &gpiob 11 0>	/*LPUART1_TX */				,<10 0 &gpiob 10 0> /*LPUART_RX */,
+				<11 0 &gpiob 1 0>	/*LPUART1_RTS */ 			,<12 0 &gpiob 13 0>	/*LPUART1_CTS */,
+			  /*<13> X											,<14> X,  */
+			  /*<15> X	 										,<16> X,  */
+			  /*<17> VDDIO					     				,<18> GND */
+				<19 0 &gpiob 6 0>	/*USART1_TX */				,<20 0 &gpiob 7 0>  /*USART1_RX */,
+				<21 0 &gpiob 3 0> 	/*USART1_RTS */				,<22 0 &gpiob 4 0> 	/*USART1_CTS */,
+				<23 0 &gpioa 8 0>  	/*TIM1_CH1 */ 				,<24 0 &gpioa 9 0> /*TIM1_CH2 */,
+				<25 0 &gpioa 10 0>	/*TIM1_CH3 */				,<26 0 &gpiob 12 0> /*TIM1_BKIN */,
+				<27 0 &gpioc 0 0>	/*ADC1_IN1/LPTIM1/2_IN1 */	,<28 0 &gpioc 1 0> /*ADC1_IN2/LPTIM1_OUT */,
+				<29 0 &gpioc 2 0>	/*ADC1_IN3/LPTIM1_IN1 */ 	,<30 0 &gpioc 3 0> /*ADC1_IN4/LPTIM1/2_ETR */;
+			 /* <31> VDDIO	     								,<32> GND
+			    <33> X											,<34> X
+			 	<35> X											,<36> X
+				<37> X											,<38> GND
+				<39> X											,<40> Shield*/	  								
+	};
+};
+
+chnl_s: &i2c1 {};
+	
+chnl_a: &lpuart1 {};
+
+/* chnl_b: X */
+
+chnl_c: &usart1 {};
+
+/* chnl_d: X */
+

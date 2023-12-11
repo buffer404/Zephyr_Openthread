@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "zephyr/boards/boards/arm/SOVA427VI",
+		"source" : "/home/mike/zephyr/zephyr/zephyr_lmtltd_light/lmtlib_light/boards/arm/SOVA"
+	}
+}

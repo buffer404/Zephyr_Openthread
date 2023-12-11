@@ -1,0 +1,19 @@
+module = LMT_SETTINGS
+module-str = lmt_settings
+source "subsys/logging/Kconfig.template.log_config"
+
+config LMT_SETTINGS
+    depends on SETTINGS
+    depends on SETTINGS_FILE
+    bool "key-value storage subsys"
+
+if LMT_SETTINGS
+
+config LMT_SETTINGS_MOUNT_FS
+    bool ""
+    depends on FILE_SYSTEM
+    depends on FILE_SYSTEM_LITTLEFS
+    depends on SETTINGS_FILE_PATH="/lfs/config"
+    default n
+
+endif

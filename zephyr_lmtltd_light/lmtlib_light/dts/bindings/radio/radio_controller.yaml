@@ -1,0 +1,15 @@
+# Copyright (c) 2018, Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+description: controller for radio devices
+
+include: base.yaml
+
+compatible: "radio-controller"
+
+bus: radio-controller
+
+properties:
+  rf_devices:
+    type: phandles
+    required: true

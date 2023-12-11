@@ -1,0 +1,22 @@
+description: LMT sim7500e driver
+
+compatible: "lmt,sim7500e"
+
+include: [base.yaml]
+
+properties:
+
+    label:
+      required: false
+
+    mdm-power-gpios:
+      type: phandle-array
+      required: true
+
+    mdm-pwkey-gpios:
+      type: phandle-array
+      required: true
+
+    mdm-status-gpios:
+      type: phandle-array
+      required: true

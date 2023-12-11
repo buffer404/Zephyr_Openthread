@@ -1,0 +1,9 @@
+# Management configuration options
+
+# SPDX-License-Identifier: Apache-2.0
+
+menu "Device Management"
+
+rsource "lmt_settings/Kconfig"
+
+endmenu

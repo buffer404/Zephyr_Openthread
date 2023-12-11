@@ -1,0 +1,8 @@
+# SOIKA board configuration
+
+# Copyright (c) 2019 Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_SOIKA
+	bool "SOIKA Bird controller"
+	depends on SOC_STM32WB55XX

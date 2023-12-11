@@ -1,0 +1,160 @@
+From 954cd762f4f5f989a2882a61673ca399d12bf21d Mon Sep 17 00:00:00 2001
+From: Maxim Kolchurin <maxim.kolchurin@gmail.com>
+Date: Mon, 25 Apr 2022 11:56:49 +0300
+Subject: [PATCH] api: direction control
+
+---
+ drivers/serial/Kconfig        |  3 +++
+ drivers/serial/uart_stm32.c   | 25 +++++++++++++++++++++++
+ include/zephyr/drivers/uart.h | 37 +++++++++++++++++++++++++++++++++++
+ subsys/modbus/modbus_serial.c |  5 +++--
+ 4 files changed, 68 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/serial/Kconfig b/drivers/serial/Kconfig
+index ba117b1636..0d8ab42c80 100644
+--- a/drivers/serial/Kconfig
++++ b/drivers/serial/Kconfig
+@@ -76,6 +76,9 @@ config UART_INTERRUPT_DRIVEN
+ 	  This option enables interrupt support for UART allowing console
+ 	  input and other UART based drivers.
+ 
++config UART_DIRECTION_CONTROL
++	bool "Enable UART direction control"
++
+ config UART_LINE_CTRL
+ 	bool "Serial Line Control API"
+ 	help
+diff --git a/drivers/serial/uart_stm32.c b/drivers/serial/uart_stm32.c
+index 6a3e5b3fc4..8f29ab6250 100644
+--- a/drivers/serial/uart_stm32.c
++++ b/drivers/serial/uart_stm32.c
+@@ -1511,10 +1511,35 @@ static int uart_stm32_async_init(const struct device *dev)
+ 
+ #endif /* CONFIG_UART_ASYNC_API */
+ 
++#ifdef CONFIG_UART_DIRECTION_CONTROL
++static int uart_stm32_direction(const struct device *dev, enum uart_config_direction dir)
++{
++	const struct uart_stm32_config *config = dev->config;
++
++	switch (dir) {
++	case UART_CFG_RX_DIRECTION:
++		LL_USART_SetTransferDirection(config->usart, LL_USART_DIRECTION_RX);
++		break;
++	case UART_CFG_TX_DIRECTION:
++		LL_USART_SetTransferDirection(config->usart, LL_USART_DIRECTION_TX);
++		break;
++	case UART_CFG_RX_TX_DIRECTION:
++		LL_USART_SetTransferDirection(config->usart, LL_USART_DIRECTION_TX_RX);
++		break;
++	default:
++		return -EINVAL;
++	}
++	return 0;
++}
++#endif /* CONFIG_UART_DIRECTION_CONTROL */
++
+ static const struct uart_driver_api uart_stm32_driver_api = {
+ 	.poll_in = uart_stm32_poll_in,
+ 	.poll_out = uart_stm32_poll_out,
+ 	.err_check = uart_stm32_err_check,
++#ifdef CONFIG_UART_DIRECTION_CONTROL
++	.direction = uart_stm32_direction,
++#endif /* CONFIG_UART_DIRECTION_CONTROL */
+ #ifdef CONFIG_UART_USE_RUNTIME_CONFIGURE
+ 	.configure = uart_stm32_configure,
+ 	.config_get = uart_stm32_config_get,
+diff --git a/include/zephyr/drivers/uart.h b/include/zephyr/drivers/uart.h
+index 231f49cd3c..fa66d079a0 100644
+--- a/include/zephyr/drivers/uart.h
++++ b/include/zephyr/drivers/uart.h
+@@ -110,6 +110,12 @@ enum uart_config_flow_control {
+ 	UART_CFG_FLOW_CTRL_DTR_DSR,
+ };
+ 
++enum uart_config_direction {
++	UART_CFG_RX_DIRECTION,
++	UART_CFG_TX_DIRECTION,
++	UART_CFG_RX_TX_DIRECTION,
++};
++
+ /**
+  * @brief UART controller configuration structure
+  *
+@@ -372,6 +378,9 @@ __subsystem struct uart_driver_api {
+ 
+ #endif
+ 
++#ifdef CONFIG_UART_DIRECTION_CONTROL
++	int (*direction)(const struct device *dev, uint8_t dir);
++#endif
+ 	/** Console I/O function */
+ 	int (*poll_in)(const struct device *dev, unsigned char *p_char);
+ 	void (*poll_out)(const struct device *dev, unsigned char out_char);
+@@ -1655,6 +1664,34 @@ static inline int z_impl_uart_drv_cmd(const struct device *dev, uint32_t cmd,
+ #endif
+ }
+ 
++/**
++ * @brief Selects direction of UART
++ *
++ * @param dev UART device instance.
++ * @param cmd Selected direction (see enum uart_config_direction).
++ *
++ * @retval 0 If successful.
++ * @retval -ENOSYS If this function is not implemented.
++ * @retval -ENOTSUP If API is not enabled.
++ * @retval -errno Other negative errno value in case of failure.
++ */
++__syscall int uart_direction(const struct device *dev, uint8_t dir);
++
++static inline int z_impl_uart_direction(const struct device *dev, uint8_t dir)
++{
++#ifdef CONFIG_UART_DIRECTION_CONTROL
++	const struct uart_driver_api *api =
++		(const struct uart_driver_api *)dev->api;
++
++	if (api->direction == NULL) {
++		return -ENOSYS;
++	}
++	return api->direction(dev, dir);
++#endif
++
++	return -ENOTSUP;
++}
++
+ #ifdef __cplusplus
+ }
+ #endif
+diff --git a/subsys/modbus/modbus_serial.c b/subsys/modbus/modbus_serial.c
+index a8b6529178..1b19516663 100644
+--- a/subsys/modbus/modbus_serial.c
++++ b/subsys/modbus/modbus_serial.c
+@@ -36,7 +36,7 @@ static void modbus_serial_tx_on(struct modbus_context *ctx)
+ 	if (cfg->de != NULL) {
+ 		gpio_pin_set(cfg->de->port, cfg->de->pin, 1);
+ 	}
+-
++	uart_direction(cfg->dev, (uint8_t)UART_CFG_TX_DIRECTION);
+ 	uart_irq_tx_enable(cfg->dev);
+ }
+ 
+@@ -57,7 +57,7 @@ static void modbus_serial_rx_on(struct modbus_context *ctx)
+ 	if (cfg->re != NULL) {
+ 		gpio_pin_set(cfg->re->port, cfg->re->pin, 1);
+ 	}
+-
++	uart_direction(cfg->dev, (uint8_t)UART_CFG_RX_DIRECTION);
+ 	uart_irq_rx_enable(cfg->dev);
+ }
+ 
+@@ -592,5 +592,6 @@ void modbus_serial_disable(struct modbus_context *ctx)
+ {
+ 	modbus_serial_tx_off(ctx);
+ 	modbus_serial_rx_off(ctx);
++	uart_direction(ctx->cfg->dev, (uint8_t)UART_CFG_RX_TX_DIRECTION);
+ 	k_timer_stop(&ctx->cfg->rtu_timer);
+ }
+-- 
+2.37.0 (Apple Git-136)
+

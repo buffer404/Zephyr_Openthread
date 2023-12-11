@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "modules/lmtlib_light/drivers",
+		"source" : "/home/mike/zephyr/zephyr/zephyr_lmtltd_light/lmtlib_light/drivers"
+	}
+}

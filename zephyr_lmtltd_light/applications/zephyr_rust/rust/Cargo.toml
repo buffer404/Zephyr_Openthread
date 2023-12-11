@@ -1,0 +1,11 @@
+[package]
+name = "rlib"
+version = "0.1.0" 
+
+[dependencies]
+
+[lib]
+crate-type = ["staticlib"]
+name = "rlib"
+path = "lib.rs"
+target = "thumbv7m-none-eabi"

@@ -1,0 +1,45 @@
+/dts-v1/;
+#include <st/f4/stm32f407Xe.dtsi>
+#include <st/f4/stm32f407v(e-g)tx-pinctrl.dtsi>
+#include "SOVA4x.dts"
+
+
+/ {
+	model = "LMT Ltd SOVA407 Bird";
+	compatible = "st,stm32f407";
+	chosen {
+		zephyr,code-partition = &slot0_partition;
+		zephyr,flash = &flash0;
+
+	};
+};
+
+&mx25l128 {
+    status = "disabled";
+};
+/delete-node/ &mx25l128;
+
+&flash0 {
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		boot_partition: partition@0 {
+			label = "mcuboot";
+			reg = <0x00000000 0xffff>;
+		};
+        scratch_partition: partition@20000 {
+            label = "image-scratch";
+            reg = <0x20000 0x20000>;
+        };
+		slot0_partition: partition@40000 {
+			label = "image-0";
+			reg = <0x40000 0x20000>;
+		};
+		slot1_partition: partition@60000 {
+			label = "image-1";
+			reg = <0x60000 0x20000>;
+		};
+	};
+};

@@ -1,0 +1,48 @@
+
+if BOARD_SOVA427VI
+config BOARD
+	default "SOVA427VI"
+endif
+
+if BOARD_SOVA407VG
+config BOARD
+	default "SOVA407VG"
+endif
+
+if BOARD_SOVA407VE
+config BOARD
+	default "SOVA407VE"
+endif
+
+if BOARD_SOVA427VI || BOARD_SOVA407VG || BOARD_SOVA407VE
+
+config ARM_MPU
+	default y
+config HW_STACK_PROTECTION
+	default y
+config SERIAL
+	default y
+config CONSOLE
+	default y
+config UART_CONSOLE
+	default y
+config GPIO
+	default y
+config CLOCK_CONTROL
+	default y
+config PINCTRL
+	default y
+
+if NETWORKING
+
+config NET_L2_ETHERNET
+	default y
+
+# MCO используется для тактирования Ethernet PHY
+# pins.c содержит перевод пина в альтернативный режим
+config CLOCK_STM32_MCO1_DIV
+	default 1
+
+endif # NETWORKING
+
+endif # BOARD_SOVA4xx

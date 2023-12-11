@@ -1,0 +1,6 @@
+if BOARD_SOVA105
+
+config BOARD
+	default "SOVA105"
+
+endif # BOARD_SOVA105

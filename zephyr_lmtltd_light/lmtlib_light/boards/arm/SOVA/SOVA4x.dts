@@ -1,0 +1,236 @@
+#include "bb-header.dtsi"
+
+/ {
+	chosen {
+		zephyr,console = &usart6;
+		zephyr,shell-uart = &usart6;
+		zephyr,uart-mcumgr = &usart6;
+		zephyr,sram = &sram0;
+		zephyr,ccm = &ccm0;
+		zephyr,canbus = &can1;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+		glc_led: led_1 {
+			gpios = <&gpiod 13 GPIO_ACTIVE_HIGH>;
+			label = "Green Light Cathode";
+		};
+		yarc_led: led_2 {
+			gpios = <&gpiod 14 GPIO_ACTIVE_HIGH>, <&gpiod 15 GPIO_ACTIVE_LOW>;
+			label = "Yellow Annode Red Cathode";
+		};
+		ycra_led: led_3 {
+			gpios = <&gpiod 15 GPIO_ACTIVE_HIGH>, <&gpiod 14 GPIO_ACTIVE_LOW>;
+			label = "Yellow Cathode Red Annode";
+		};
+	};
+	gpio_keys {
+		compatible = "gpio-keys";
+		user_button: button {
+			label = "User";
+			gpios = <&gpioc 15 GPIO_ACTIVE_LOW>;
+		};
+	};
+
+	aliases {
+		led0 = &glc_led;
+		led1 = &yarc_led;
+		led2 = &ycra_led;
+		sw0 = &user_button;
+		bootloader-led0 = &glc_led;
+		sdhc0 = &sdhc0;
+	};
+};
+
+&clk_hse {
+	clock-frequency = <DT_FREQ_M(25)>;
+	status = "okay";
+};
+
+&pll {
+	div-m = <25>;
+	mul-n = <336>;
+	div-p = <2>;
+	div-q = <7>;
+	clocks = <&clk_hse>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(168)>; /* highest value to get a precise USB clock */
+	ahb-prescaler = <1>;
+	apb1-prescaler = <4>;
+	apb2-prescaler = <2>;
+};
+
+&i2c1 {
+	pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
+	pinctrl-names = "default";
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_FAST>;
+	lm75@48 {
+		compatible = "lm75";
+		// label = "lm75";
+		reg = <0x48>;
+	};
+	eeprom: M24256_B@50 {
+		status = "disabled";
+		compatible = "atmel,at24";
+		reg = <0x50>;
+		// label = "eeprom";
+		size = <0x8000>;
+		pagesize = <64>;
+		address-width = <16>;
+		timeout = <10>;
+	};
+};
+
+&spi1 {
+	pinctrl-0 = <&spi1_sck_pa5 &spi1_miso_pa6 &spi1_mosi_pa7>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+
+&spi2 {
+	pinctrl-0 = <&spi2_sck_pb10 &spi2_miso_pb14 &spi2_mosi_pb15>;
+	pinctrl-names = "default";
+	cs-gpios = <&gpioe 6 GPIO_ACTIVE_LOW>, <&gpioe 5 GPIO_ACTIVE_LOW>;
+	status = "okay";
+	sdhc0: sdhc@0 {
+		compatible = "zephyr,sdhc-spi-slot";
+		reg = <0>;
+		status = "okay";
+		mmc {
+			compatible = "zephyr,sdmmc-disk";
+			status = "okay";
+		};
+		spi-max-frequency = <20000000>;
+	};
+
+	mx25l128: mx25l12835f@1 {
+		compatible = "jedec,spi-nor";
+		// label = "MX25L128";
+		reg = <1>;
+		size = <0x1000000>;
+		spi-max-frequency = <DT_FREQ_M(133)>;
+		jedec-id = [ c2 20 18  ];
+		status = "okay";
+		reset-gpios = <&gpioe 0 GPIO_ACTIVE_LOW>;
+		partitions {
+			compatible = "fixed-partitions";
+			#address-cells = <1>;
+			#size-cells = <1>;
+			/* second image slot */
+			scratch_partition: partition@0 {
+				label = "image-scratch";
+				reg = <0x0 DT_SIZE_K(128)>;
+			};
+			settings_partition: partition@20000 {
+				label = "settings";
+				reg = <0x20000 0x710000>;
+			};
+			storage_partition: partition@730000 {
+				label = "storage";
+				reg = <0x730000 0x710000>;
+			};
+			slot1_partition: partition@E40000 {
+				label = "image-1";
+				reg = <0xE40000 DT_SIZE_K(1792)>;
+			};
+
+		};
+	};
+};
+
+&spi3 {
+	pinctrl-0 = <&spi3_sck_pc10 &spi3_miso_pc11 &spi3_mosi_pc12>;
+	pinctrl-names = "default";
+	status = "disabled";
+    dmas = <&dma1 5 0 0x28440 0x03>,
+          <&dma1 2 0 0x28480 0x03>;
+    dma-names = "tx", "rx";
+};
+
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pb6 &usart1_rx_pb7>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
+
+/* 
+выводы CAN1 и USART2 соеденены на схеме платы
+при активации CAN1 требуется выключить USART2
+*/
+&can1 {
+	pinctrl-0 = <&can1_rx_pd0 &can1_tx_pd1>;
+	pinctrl-names = "default";
+	bus-speed = <125000>;
+	status = "disabled";
+};
+
+&usart2 {
+	pinctrl-0 = <&usart2_tx_pd5 &usart2_rx_pd6 &usart2_rts_pd4 &usart2_cts_pd3>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "disabled";
+};
+
+&usart3 {
+	pinctrl-0 = <&usart3_tx_pd8 &usart3_rx_pd9 &usart3_rts_pd12 &usart3_cts_pd11>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "disabled";
+};
+
+
+&usart6 {
+	pinctrl-0 = <&usart6_tx_pc6 &usart6_rx_pc7>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
+
+zephyr_udc0: &usbotg_fs {
+	pinctrl-0 = <&usb_otg_fs_dm_pa11 &usb_otg_fs_dp_pa12>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&rtc {
+	status = "okay";
+};
+
+&iwdg {
+	status = "okay";
+};
+
+&rng {
+	status = "okay";
+};
+
+&dma1 {
+	status = "okay";
+};
+
+&dma2 {
+	status = "okay";
+};
+
+&mac {
+	status = "okay";
+	pinctrl-0 = <&eth_mdc_pc1
+	&eth_rxd0_pc4
+	&eth_rxd1_pc5
+	&eth_ref_clk_pa1
+	&eth_mdio_pa2
+	&eth_crs_dv_pa7
+	&eth_tx_en_pb11
+	&eth_txd0_pb12
+	&eth_txd1_pb13
+	>;
+	pinctrl-names = "default";
+};

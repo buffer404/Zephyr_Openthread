@@ -1,0 +1,65 @@
+/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/250/bin/ninja/linux/x64/ninja -DCMAKE_C_COMPILER=/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -G Ninja -S /home/mike/zephyr/zephyr -B /home/mike/zephyr/zephyr/cmake-build-debug
+CMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in CMakeLists.txt:
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+-- Check for working C compiler: /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc - broken
+CMake Error at /usr/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "/home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '/home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-71Y863'
+    
+    Run Build Command(s): /snap/clion/250/bin/ninja/linux/x64/ninja -v cmTC_11b21
+    [1/2] /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc   -fdiagnostics-color=always -o CMakeFiles/cmTC_11b21.dir/testCCompiler.c.o -c /home/mike/zephyr/zephyr/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-71Y863/testCCompiler.c
+    [2/2] : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -rdynamic CMakeFiles/cmTC_11b21.dir/testCCompiler.c.o -o cmTC_11b21   && :
+    FAILED: cmTC_11b21 
+    : && /home/mike/download/zephyr-sdk-0.16.3/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc  -rdynamic CMakeFiles/cmTC_11b21.dir/testCCompiler.c.o -o cmTC_11b21   && :
+    arm-zephyr-eabi-gcc: error: unrecognized command-line option '-rdynamic'
+    ninja: build stopped: subcommand failed.
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.27)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring incomplete, errors occurred!

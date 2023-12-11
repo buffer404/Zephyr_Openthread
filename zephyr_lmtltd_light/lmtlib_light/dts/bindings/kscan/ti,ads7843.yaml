@@ -1,0 +1,10 @@
+description: Texas Instruments ADS7843 touch controller
+
+include: [kscan.yaml, spi-device.yaml]
+
+compatible: "ti,ads7843"
+
+properties:
+    int-gpios:
+      type: phandle-array
+      required: true

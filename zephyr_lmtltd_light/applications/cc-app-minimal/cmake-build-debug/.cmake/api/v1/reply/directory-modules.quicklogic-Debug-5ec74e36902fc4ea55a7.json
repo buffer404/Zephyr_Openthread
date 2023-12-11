@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "modules/quicklogic",
+		"source" : "/home/mike/zephyr/modules/hal/quicklogic"
+	}
+}

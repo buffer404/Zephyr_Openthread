@@ -1,0 +1,22 @@
+identifier: SOVA407VE
+name: LMT Ltd. SOVA407VE
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - xtools
+  - gnuarmemb
+ram: 192
+flash: 512
+supported:
+  - netif:eth
+  - i2c
+  - spi
+  - gpio
+  - pwm
+  - counter
+  - usb_device
+  - watchdog
+  - adc
+  - dac
+  - dma

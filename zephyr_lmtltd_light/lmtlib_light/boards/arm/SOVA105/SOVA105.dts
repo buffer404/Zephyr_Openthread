@@ -1,0 +1,205 @@
+/dts-v1/;
+#include <st/f1/stm32f105Xc.dtsi>
+#include "bb-header.dtsi"
+#include "st/f1/stm32f105v(8-b-c)tx-pinctrl.dtsi"
+#include "SOVA105-pinctrl.dtsi"
+
+/ {
+	model = "SOVA105 bird board";
+	compatible = "st,stm32f105";
+
+	chosen {
+		zephyr,console = &usart1;
+		zephyr,shell-uart = &usart1;
+		zephyr,uart-mcumgr = &usart1;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &slot0_partition;
+	};
+	soc {
+		dma2: dma@40020400 {
+			compatible = "st,stm32-dma-v2bis";
+			#dma-cells = <2>;
+			dma-requests = <5>;
+			reg = <0x40020400 0x400>;
+			clocks = <&rcc STM32_CLOCK_BUS_AHB1 0x2>;
+			interrupts = <56 0 57 0 58 0 59 0 60 0>;
+			status = "okay";
+			label = "DMA_2";
+		};
+	};
+	leds {
+		compatible = "gpio-leds";
+		glc_led: led_1 {
+			gpios = <&gpiod 13 GPIO_ACTIVE_HIGH>;
+			label = "Green Light Cathode";
+		};
+		yarc_led: led_2 {
+			gpios = <&gpiod 14 GPIO_ACTIVE_HIGH>, <&gpiod 15 GPIO_ACTIVE_LOW>;
+			label = "Yellow Annode Red Cathode";
+
+		};
+		ycra_led: led_3 {
+			gpios = <&gpiod 15 GPIO_ACTIVE_HIGH>, <&gpiod 14 GPIO_ACTIVE_LOW>;
+			label = "Yellow Cathode Red Annode";
+		};
+		led_4: led_4 {
+			gpios = <&gpiod 4 GPIO_ACTIVE_LOW>;
+			label = "de_pin";
+
+		};
+	};
+	buttons {
+		compatible = "gpio-keys";
+		button1: button_1 {
+			gpios = <&gpioc 15 GPIO_ACTIVE_LOW>;
+			label = "Push button switch 1";
+		};
+	};
+	aliases {
+		led0 = &glc_led;
+		led1 = &yarc_led;
+		led2 = &ycra_led;
+		de-pin = &led_4;
+		sw0 = &button1;
+		bootloader-led0 = &glc_led;
+	};
+};
+
+&clk_hse {
+	clock-frequency = <DT_FREQ_M(25)>;
+	status = "okay";
+};
+
+&clk_hsi {
+	clock-frequency = <DT_FREQ_M(8)>;
+	status = "okay";
+};
+&clk_lsi {
+	status = "okay";
+};
+
+/* 25 * 8 / 5 = 40 Mhz */
+&pll2 {
+	status = "okay";
+	clocks = <&clk_hse>;
+	mul = <8>;
+	prediv = <5>;
+};
+
+/* 40 * 7 / 4 = 72 Mhz */
+&pll {
+	status = "okay";
+	clocks = <&pll2>;
+	mul = <7>;
+	prediv = <4>;
+};
+
+&rcc {
+	status = "okay";
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(72)>;
+	ahb-prescaler = <1>;
+	/* 36 MHz except TIM2..7 (36x2 = 72 MHz) */
+	apb1-prescaler = <2>;
+	apb2-prescaler = <1>;
+};
+
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
+	pinctrl-names = "default";
+	current-speed = <4000000>;
+	status = "okay";
+};
+// bb_header 11 GPIO_ACTIVE_LOW // gpiod 4
+&usart2 {
+	pinctrl-0 = <&usart2_tx_remap1_pd5 &usart2_rx_remap1_pd6 /* &usart2_rts_remap1_pd4 */>;
+	pinctrl-names = "default";
+	status = "okay";
+	current-speed = <230400>;
+};
+&usart3 {
+	pinctrl-0 = <&usart3_tx_remap2_pd8 &usart3_rx_remap2_pd9>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+};
+
+&i2c1 {
+	pinctrl-0 = <&i2c1_scl_remap1_pb8 &i2c1_sda_remap1_pb9>;
+	pinctrl-names = "default";
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+};
+
+&spi1 {
+	pinctrl-0 = <&spi1_nss_master_pa4 &spi1_sck_master_pa5
+	&spi1_miso_master_pa6 &spi1_mosi_master_pa7>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&spi2 {
+	pinctrl-0 = <&spi2_sck_master_pb10
+	&spi2_miso_master_pb14 &spi2_mosi_master_pb15>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&spi3 {
+	pinctrl-0 = <&spi3_sck_remap1_master_pc10
+	&spi3_miso_remap1_master_pc11 &spi3_mosi_remap1_master_pc12>;
+	pinctrl-names = "default";
+	status = "okay";
+	dmas = <&dma2 2 0x20440>, <&dma2 1 0x20480>;
+	dma-names = "tx", "rx";
+};
+
+
+&iwdg {
+	status = "okay";
+	label = "iwdg";
+};
+
+&timers2 {
+	st,prescaler = <71>;
+	status = "okay";
+};
+
+&timers5 {
+	status = "okay";
+	st,prescaler = <71>;
+
+	counter0: counter0 {
+		compatible = "st,stm32-counter";
+		status = "okay";
+		label = "COUNTER_0";
+	};
+};
+
+&timers3 {
+	status = "okay";
+};
+
+&flash0 {
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		boot_partition: partition@0 {
+			label = "mcuboot";
+			reg = <0x00000000 0xa000>;
+		};
+		slot0_partition: partition@a000 {
+			label = "image-0";
+			reg = <0xa000 0x19000>;
+		};
+		slot1_partition: partition@23000 {
+			label = "image-1";
+			reg = <0x23000 0x19000>;
+		};
+		scratch_partition: partition@3c000 {
+			label = "image-scratch";
+			reg = <0x3c000 0x4000>;
+		};
+	};
+};

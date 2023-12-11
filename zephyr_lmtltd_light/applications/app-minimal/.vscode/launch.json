@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+		{
+			"type": "cortex-debug",
+			"request": "launch",
+			"servertype": "openocd",
+			"cwd": "${workspaceRoot}",
+			"executable": "build/zephyr/zephyr.elf",
+			"name": "program sova427",
+			// путь до gdb, если не в path
+			// "gdbPath": "/home/user/zephyr/zephyr-sdk-0.15.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+			"svdFile": "${workspaceRoot}/../../lmtlib/boards/arm/SOVA427/STM32F427.svd",
+			"device": "sova427",
+			"configFiles": [
+				"${workspaceRoot}/../../lmtlib/boards/arm/SOVA427/support/openocd.cfg"
+			],		
+			"rtos": "auto",
+		}
+    ]
+}
